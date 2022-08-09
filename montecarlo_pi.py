@@ -10,18 +10,14 @@ def is_inside_circle():
     else:
         return False
 
-def calculate_pi(iterations, out):
+def calculate_pi(iterations):
     inside = 0
     for i in range(iterations):
         if is_inside_circle():
             inside += 1
     pi = 4 * inside / iterations
-    
-    if not out:
-        return pi
-    else:
-        print(f"{iterations} iterations: {pi} ({'{0:+g}'.format(pi - math.pi)})")
+    print(f"{iterations} iterations: {pi} ({pi - math.pi})")
 
 
-for i in range(2, 10):
-    calculate_pi(10**i, True)
+for i in range(2, 9):
+    calculate_pi(10**i)
