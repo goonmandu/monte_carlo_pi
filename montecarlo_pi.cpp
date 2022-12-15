@@ -1,11 +1,11 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
-#include <time.h>
+#include <iostream>
+#include <cstdlib>
+#include <cmath>
+#include <ctime>
 
 int is_in_circle() {
-    float x = ((float) rand()) / (float) RAND_MAX;
-    float y = ((float) rand()) / (float) RAND_MAX;
+    double x = ((double) rand()) / (double) RAND_MAX;
+    double y = ((double) rand()) / (double) RAND_MAX;
 
     if (pow(x, 2) + pow(y, 2) < 1) {
         return 1;
@@ -22,7 +22,7 @@ void calculate_pi(unsigned long iterations) {
         }
     }
     double est_pi = 4 * ((double) inside / iterations);
-    printf("%lu iterations: %f (%f)\n", iterations, est_pi, est_pi - M_PI);
+    std::cout << iterations << " iterations: " << est_pi << " (" << est_pi - M_PI << ")" << std::endl;
 }
 
 int main() {
